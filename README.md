@@ -2,9 +2,9 @@
 
 A full-stack e-commerce store for car parts (brakes, engine, suspension, lighting, tyres, batteries) with a complete **admin dashboard** for managing products and orders.
 
-Built with **Next.js 14 (App Router)**, **Prisma**, **PostgreSQL**, **TypeScript** and **Tailwind CSS**.
+Built with **Next.js 14 (App Router)**, **Prisma**, **SQLite** (zero-setup; swappable for PostgreSQL), **TypeScript** and **Tailwind CSS**.
 
-![Tech](https://img.shields.io/badge/Next.js-14-black) ![Tech](https://img.shields.io/badge/Prisma-5-2D3748) ![Tech](https://img.shields.io/badge/PostgreSQL-blue) ![Tech](https://img.shields.io/badge/TypeScript-5-3178C6) ![Tech](https://img.shields.io/badge/TailwindCSS-3-38BDF8)
+![Tech](https://img.shields.io/badge/Next.js-14-black) ![Tech](https://img.shields.io/badge/Prisma-5-2D3748) ![Tech](https://img.shields.io/badge/SQLite-003B57) ![Tech](https://img.shields.io/badge/TypeScript-5-3178C6) ![Tech](https://img.shields.io/badge/TailwindCSS-3-38BDF8)
 
 ---
 
@@ -36,35 +36,25 @@ Built with **Next.js 14 (App Router)**, **Prisma**, **PostgreSQL**, **TypeScript
 
 ## 🚀 Getting Started
 
-### 1. Install dependencies
 ```bash
-npm install
+npm install            # installs deps + generates Prisma client
+cp .env.example .env   # uses SQLite by default — zero config
+npm run setup          # creates the database + seeds demo data
+npm run dev            # start the app
 ```
 
-### 2. Set up the database
-Copy the env file and add your PostgreSQL connection string:
-```bash
-cp .env.example .env
-```
-Don't have Postgres locally? Use a **free cloud database** in 2 minutes:
-- [Neon](https://neon.tech) (recommended) · [Supabase](https://supabase.com) · [Railway](https://railway.app)
+Open **http://localhost:3000** 🎉
 
-Paste the connection string into `.env`:
-```env
-DATABASE_URL="postgresql://user:password@host:5432/autoparts?schema=public"
-```
+> `npm run setup` = `prisma db push` + the seed script. It creates `prisma/dev.db` with 6 categories, 12 products and sample orders.
 
-### 3. Create tables & seed demo data
-```bash
-npm run db:push      # create tables from the Prisma schema
-npm run db:seed      # add 6 categories, 12 products & sample orders
-```
-
-### 4. Run the app
-```bash
-npm run dev
-```
-Open **http://localhost:3000**
+### Want to use PostgreSQL instead? (optional, for production)
+1. In `prisma/schema.prisma` change the datasource provider from `sqlite` to `postgresql`.
+2. Change the `status` field type back to an enum if you prefer (optional).
+3. Put a Postgres connection string in `.env` — a free [Neon](https://neon.tech) database works great:
+   ```env
+   DATABASE_URL="postgresql://user:password@host:5432/autoparts?schema=public"
+   ```
+4. Run `npm run setup` again.
 
 | Page | URL |
 |------|-----|

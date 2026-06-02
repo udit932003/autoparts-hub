@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
@@ -44,7 +44,7 @@ model Order {
   customerPhone String
   address       String
   city          String
-  status        OrderStatus @default(PENDING)
+  status        String      @default("PENDING") // PENDING | PROCESSING | SHIPPED | DELIVERED | CANCELLED
   total         Float
   items         OrderItem[]
   createdAt     DateTime    @default(now())
@@ -63,12 +63,4 @@ model OrderItem {
 
   @@index([orderId])
   @@index([productId])
-}
-
-enum OrderStatus {
-  PENDING
-  PROCESSING
-  SHIPPED
-  DELIVERED
-  CANCELLED
 }

@@ -21,10 +21,11 @@ export default async function ProductsPage({
   const where: Prisma.ProductWhereInput = {};
   if (category) where.category = { slug: category };
   if (q) {
+    // SQLite's `contains` is already case-insensitive for ASCII (no `mode` option).
     where.OR = [
-      { name: { contains: q, mode: "insensitive" } },
-      { brand: { contains: q, mode: "insensitive" } },
-      { partNumber: { contains: q, mode: "insensitive" } },
+      { name: { contains: q } },
+      { brand: { contains: q } },
+      { partNumber: { contains: q } },
     ];
   }
 
