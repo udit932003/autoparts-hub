@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#155e75"/></linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1"><stop offset="0.5" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.45"/></linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg)"/>
+  <g opacity="0.92"><rect x="206" y="248" width="150" height="72" rx="16" fill="#ffffff"/>
+        <circle cx="246" cy="284" r="13" fill="#155e75"/>
+        <g fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round"><path d="M372 250 a58 58 0 0 1 0 68"/><path d="M404 232 a92 92 0 0 1 0 104"/><path d="M436 214 a126 126 0 0 1 0 140"/></g></g>
+  <rect width="600" height="600" fill="url(#shade)"/>
+  <text x="40" y="500" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="3" fill="#ffffff" fill-opacity="0.85">DENSO</text>
+       <text x="40" y="544" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#ffffff">Oxygen Sensor</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#065f46"/></linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1"><stop offset="0.5" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.45"/></linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg)"/>
+  <g opacity="0.92"><rect x="194" y="178" width="212" height="132" rx="14" fill="none" stroke="#ffffff" stroke-width="14"/>
+        <rect x="222" y="158" width="38" height="24" rx="5" fill="#ffffff"/>
+        <rect x="340" y="158" width="38" height="24" rx="5" fill="#ffffff"/>
+        <g stroke="#ffffff" stroke-width="11" stroke-linecap="round"><line x1="244" y1="244" x2="286" y2="244"/><line x1="265" y1="223" x2="265" y2="265"/><line x1="316" y1="244" x2="358" y2="244"/></g></g>
+  <rect width="600" height="600" fill="url(#shade)"/>
+  <text x="300" y="430" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="800" fill="#ffffff">Batteries</text>
+</svg>

@@ -11,7 +11,8 @@
     "db:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",
     "db:studio": "prisma studio",
-    "setup": "prisma db push && tsx prisma/seed.ts",
+    "gen:images": "tsx prisma/gen-images.ts",
+    "setup": "prisma db push && tsx prisma/gen-images.ts && tsx prisma/seed.ts",
     "postinstall": "prisma generate"
   },
   "prisma": {

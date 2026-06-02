@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#94a3b8"/><stop offset="1" stop-color="#334155"/></linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1"><stop offset="0.5" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.45"/></linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg)"/>
+  <g opacity="0.92"><g transform="rotate(45 300 232)">
+        <rect x="284" y="200" width="32" height="150" rx="11" fill="#ffffff"/>
+        <circle cx="300" cy="172" r="42" fill="#ffffff"/>
+        <circle cx="300" cy="160" r="19" fill="#334155"/>
+      </g></g>
+  <rect width="600" height="600" fill="url(#shade)"/>
+  <text x="40" y="500" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="3" fill="#ffffff" fill-opacity="0.85">BOSCH</text>
+       <text x="40" y="544" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#ffffff">Aero Wiper Blades</text>
+</svg>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowRight, Truck, ShieldCheck, Headphones, Tag } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import ProductCard from "@/components/ProductCard";
+import CarScene from "@/components/CarScene";
 
 export const dynamic = "force-dynamic";
 
@@ -48,14 +49,8 @@ export default async function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="relative hidden aspect-[4/3] overflow-hidden rounded-2xl md:block">
-            <Image
-              src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?w=900&q=80"
-              alt="Car engine bay"
-              fill
-              className="object-cover"
-              priority
-            />
+          <div className="hidden md:block">
+            <CarScene />
           </div>
         </div>
       </section>
