@@ -37,7 +37,7 @@ export default function Footer() {
         <div>
           <h4 className="mb-3 text-sm font-semibold text-slate-900">Support</h4>
           <ul className="space-y-2 text-sm text-slate-500">
-            <li>📞 1800-123-4567</li>
+            <li>📞 7042950479</li>
             <li>✉️ help@autopartshub.com</li>
             <li>🚚 Free shipping over ₹2000</li>
           </ul>

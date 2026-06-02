@@ -25,7 +25,7 @@ export default function Navbar() {
             <Wrench size={20} />
           </span>
           <span className="text-lg">
-            AutoParts<span className="text-brand-600">Hub</span>
+           Udit<span className="text-brand-600">Hub</span>
           </span>
         </Link>
 
