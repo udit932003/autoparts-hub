@@ -10,6 +10,19 @@ const nextConfig = {
       { protocol: "https", hostname: "**" },
     ],
   },
+  // Allow the mobile app (incl. its web/browser build) to call the API
+  async headers() {
+    return [
+      {
+        source: "/api/:path*",
+        headers: [
+          { key: "Access-Control-Allow-Origin", value: "*" },
+          { key: "Access-Control-Allow-Methods", value: "GET,POST,OPTIONS" },
+          { key: "Access-Control-Allow-Headers", value: "Content-Type" },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
