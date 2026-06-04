@@ -37,7 +37,24 @@ export default function Footer() {
         <div>
           <h4 className="mb-3 text-sm font-semibold text-slate-900">Support</h4>
           <ul className="space-y-2 text-sm text-slate-500">
-            <li>📞 7042950479</li>
+            <li>
+              📞{" "}
+              <a href="tel:+919211742641" className="hover:text-brand-600">
+                +91 92117 42641
+              </a>{" "}
+              <span className="text-xs text-slate-400">(Sonu Chauhan)</span>
+            </li>
+            <li>
+              💬{" "}
+              <a
+                href="https://wa.me/919211742641"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-brand-600"
+              >
+                WhatsApp: 92117 42641
+              </a>
+            </li>
             <li>✉️ help@autopartshub.com</li>
             <li>🚚 Free shipping over ₹2000</li>
           </ul>
