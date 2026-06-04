@@ -15,7 +15,7 @@ async function main() {
   const categoryMap: Record<string, string> = {};
   for (const c of categories) {
     const created = await prisma.category.create({
-      data: { name: c.name, slug: c.slug, image: `/categories/${c.slug}.svg` },
+      data: { name: c.name, slug: c.slug, image: `/parts/${c.slug}.jpg` },
     });
     categoryMap[c.slug] = created.id;
   }
@@ -30,7 +30,7 @@ async function main() {
         brand: p.brand,
         price: p.price,
         stock: p.stock,
-        image: `/products/${slugify(p.name)}.svg`,
+        image: `/parts/${p.category}.jpg`,
         partNumber: p.partNumber,
         featured: p.featured,
         categoryId: categoryMap[p.category],
