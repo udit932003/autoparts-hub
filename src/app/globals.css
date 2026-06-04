@@ -100,3 +100,33 @@ body {
     @apply rounded-xl border border-slate-200 bg-white shadow-sm;
   }
 }
+
+/* ---------- Dark mode ----------
+   Site-wide dark theme via a single override block (toggled by the
+   `dark` class on <html>). Keeps it consistent without editing every file. */
+.dark body { background: #0b1120; color: #e2e8f0; }
+
+.dark .bg-white,
+.dark header.bg-white\/95,
+.dark .bg-white\/95 { background-color: #111827 !important; }
+
+.dark .bg-slate-50 { background-color: #0f172a !important; }
+.dark .bg-slate-100 { background-color: #1e293b !important; }
+.dark .bg-slate-100\/70 { background-color: #1e293b !important; }
+
+.dark .text-slate-900 { color: #f1f5f9 !important; }
+.dark .text-slate-800 { color: #e2e8f0 !important; }
+.dark .text-slate-700 { color: #cbd5e1 !important; }
+.dark .text-slate-600 { color: #94a3b8 !important; }
+.dark .text-slate-500 { color: #94a3b8 !important; }
+
+.dark .border-slate-200,
+.dark .border-slate-300,
+.dark .border-slate-100 { border-color: #243044 !important; }
+
+.dark .card { background-color: #111827 !important; border-color: #243044 !important; }
+.dark .input { background-color: #0f172a !important; border-color: #334155 !important; color: #e2e8f0 !important; }
+.dark .btn-outline { background-color: #111827 !important; border-color: #334155 !important; color: #e2e8f0 !important; }
+.dark .btn-ghost:hover { background-color: #1e293b !important; }
+.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]) { border-color: #243044 !important; }
+.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]) { border-color: #243044 !important; }

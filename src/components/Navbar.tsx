@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ShoppingCart, Wrench, Search } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 import { useCart } from "@/lib/cart";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
@@ -46,6 +47,7 @@ export default function Navbar() {
           <Link href="/contact" className="btn-ghost hidden sm:inline-flex">
             Contact
           </Link>
+          <ThemeToggle />
           <Link href="/cart" className="btn-ghost relative">
             <ShoppingCart size={20} />
             {totalItems > 0 && (
