@@ -6,8 +6,8 @@ import ProductCard from "@/components/ProductCard";
 import CarScene from "@/components/CarScene";
 import ScrollReveal from "@/components/ScrollReveal";
 
-const DEMO_VIDEO =
-  "https://upload.wikimedia.org/wikipedia/commons/8/8e/FSR_Tarpan_239_D_van_%28driving%29.webm";
+// Self-hosted (in /public) so it always plays — no hot-link / CORS issues.
+const DEMO_VIDEO = "/demo-drive.webm";
 
 export const dynamic = "force-dynamic";
 
@@ -99,14 +99,15 @@ export default async function HomePage() {
           <ScrollReveal delay={120} className="mt-8">
             <div className="glow-hover mx-auto max-w-4xl overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
               <video
-                className="aspect-video w-full object-cover"
+                className="aspect-video w-full bg-slate-900 object-cover"
                 src={DEMO_VIDEO}
+                poster="/parts/tyres-wheels.jpg"
                 autoPlay
                 muted
                 loop
                 playsInline
                 controls
-                preload="metadata"
+                preload="auto"
               />
             </div>
           </ScrollReveal>
