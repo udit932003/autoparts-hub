@@ -4,6 +4,10 @@ import { ArrowRight, Truck, ShieldCheck, Headphones, Tag } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import ProductCard from "@/components/ProductCard";
 import CarScene from "@/components/CarScene";
+import ScrollReveal from "@/components/ScrollReveal";
+
+const DEMO_VIDEO =
+  "https://upload.wikimedia.org/wikipedia/commons/8/8e/FSR_Tarpan_239_D_van_%28driving%29.webm";
 
 export const dynamic = "force-dynamic";
 
@@ -23,10 +27,11 @@ export default async function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-slate-900 text-white">
+      <section className="hero-glow bg-slate-900 text-white">
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-16 md:grid-cols-2 md:py-24">
           <div>
-            <span className="inline-block rounded-full bg-brand-600/20 px-3 py-1 text-sm font-medium text-brand-300">
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand-600/20 px-3 py-1 text-sm font-medium text-brand-300">
+              <span className="live-dot inline-block h-2 w-2 rounded-full bg-green-400" />
               🚗 100% Genuine Parts
             </span>
             <h1 className="mt-4 text-4xl font-extrabold leading-tight md:text-5xl">
@@ -49,7 +54,7 @@ export default async function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="hidden md:block">
+          <div className="float-soft hidden md:block">
             <CarScene />
           </div>
         </div>
@@ -77,32 +82,66 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Demo video */}
+      <section className="bg-slate-950">
+        <div className="mx-auto max-w-7xl px-4 py-14">
+          <ScrollReveal className="text-center">
+            <span className="text-sm font-semibold uppercase tracking-widest text-brand-400">
+              See it in action
+            </span>
+            <h2 className="mt-2 text-2xl font-bold text-white md:text-3xl">
+              Built for every drive
+            </h2>
+            <p className="mx-auto mt-2 max-w-md text-sm text-slate-400">
+              Quality parts that keep your car running smooth — from city streets to the open road.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={120} className="mt-8">
+            <div className="glow-hover mx-auto max-w-4xl overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+              <video
+                className="aspect-video w-full object-cover"
+                src={DEMO_VIDEO}
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                preload="metadata"
+              />
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Categories */}
       <section className="mx-auto max-w-7xl px-4 py-12">
-        <h2 className="text-2xl font-bold text-slate-900">Shop by category</h2>
+        <ScrollReveal>
+          <h2 className="text-2xl font-bold text-slate-900">Shop by category</h2>
+        </ScrollReveal>
         <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
-          {categories.map((c) => (
-            <Link
-              key={c.id}
-              href={`/products?category=${c.slug}`}
-              className="card group overflow-hidden text-center"
-            >
-              <div className="relative aspect-square overflow-hidden bg-slate-100">
-                {c.image && (
-                  <Image
-                    src={c.image}
-                    alt={c.name}
-                    fill
-                    sizes="(max-width: 768px) 50vw, 16vw"
-                    className="object-cover transition-transform group-hover:scale-105"
-                  />
-                )}
-              </div>
-              <div className="p-3">
-                <p className="text-sm font-semibold text-slate-800">{c.name}</p>
-                <p className="text-xs text-slate-500">{c._count.products} items</p>
-              </div>
-            </Link>
+          {categories.map((c, i) => (
+            <ScrollReveal key={c.id} delay={i * 60}>
+              <Link
+                href={`/products?category=${c.slug}`}
+                className="card group glow-hover block overflow-hidden text-center"
+              >
+                <div className="shine relative aspect-square overflow-hidden bg-slate-100">
+                  {c.image && (
+                    <Image
+                      src={c.image}
+                      alt={c.name}
+                      fill
+                      sizes="(max-width: 768px) 50vw, 16vw"
+                      className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                  )}
+                </div>
+                <div className="p-3">
+                  <p className="text-sm font-semibold text-slate-800">{c.name}</p>
+                  <p className="text-xs text-slate-500">{c._count.products} items</p>
+                </div>
+              </Link>
+            </ScrollReveal>
           ))}
         </div>
       </section>
@@ -116,8 +155,10 @@ export default async function HomePage() {
           </Link>
         </div>
         <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-          {featured.map((p) => (
-            <ProductCard key={p.id} product={p} />
+          {featured.map((p, i) => (
+            <ScrollReveal key={p.id} delay={i * 60}>
+              <ProductCard product={p} />
+            </ScrollReveal>
           ))}
         </div>
       </section>

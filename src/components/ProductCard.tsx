@@ -18,9 +18,9 @@ export default function ProductCard({ product }: Props) {
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="card group relative overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+      className="card group glow-hover relative overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
     >
-      <div className="relative aspect-square overflow-hidden bg-slate-100">
+      <div className="shine relative aspect-square overflow-hidden bg-slate-100">
         <Image
           src={product.image}
           alt={product.name}
