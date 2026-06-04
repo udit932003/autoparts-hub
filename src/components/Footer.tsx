@@ -30,7 +30,7 @@ export default function Footer() {
           <h4 className="mb-3 text-sm font-semibold text-slate-900">Company</h4>
           <ul className="space-y-2 text-sm text-slate-500">
             <li><span className="cursor-default">About Us</span></li>
-            <li><span className="cursor-default">Contact</span></li>
+            <li><Link href="/contact" className="hover:text-brand-600">Contact / Enquiry</Link></li>
             <li><Link href="/admin" className="hover:text-brand-600">Admin Dashboard</Link></li>
           </ul>
         </div>

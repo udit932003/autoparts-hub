@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Package, ShoppingCart, Wrench, LogOut, Store } from "lucide-react";
+import { LayoutDashboard, Package, ShoppingCart, Wrench, LogOut, Store, MessageSquare } from "lucide-react";
 import { logout } from "@/app/actions/auth";
 import { cn } from "@/lib/utils";
 
@@ -10,6 +10,7 @@ const links = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/products", label: "Products", icon: Package },
   { href: "/admin/orders", label: "Orders", icon: ShoppingCart },
+  { href: "/admin/leads", label: "Leads", icon: MessageSquare },
 ];
 
 export default function Sidebar() {

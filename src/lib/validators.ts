@@ -20,5 +20,13 @@ export const checkoutSchema = z.object({
   city: z.string().min(2, "City is required"),
 });
 
+export const enquirySchema = z.object({
+  name: z.string().min(2, "Please enter your name"),
+  email: z.string().email("Enter a valid email"),
+  phone: z.string().min(8, "Enter a valid phone number"),
+  message: z.string().optional(),
+});
+
 export type ProductInput = z.infer<typeof productSchema>;
 export type CheckoutInput = z.infer<typeof checkoutSchema>;
+export type EnquiryInput = z.infer<typeof enquirySchema>;

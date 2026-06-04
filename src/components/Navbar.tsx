@@ -43,6 +43,9 @@ export default function Navbar() {
           <Link href="/products" className="btn-ghost hidden sm:inline-flex">
             All Parts
           </Link>
+          <Link href="/contact" className="btn-ghost hidden sm:inline-flex">
+            Contact
+          </Link>
           <Link href="/cart" className="btn-ghost relative">
             <ShoppingCart size={20} />
             {totalItems > 0 && (

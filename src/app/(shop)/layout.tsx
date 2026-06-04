@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { CartProvider } from "@/lib/cart";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FloatingContact from "@/components/FloatingContact";
 
 export default function ShopLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,6 +13,7 @@ export default function ShopLayout({ children }: { children: React.ReactNode }) 
         </Suspense>
         <main className="flex-1">{children}</main>
         <Footer />
+        <FloatingContact />
       </div>
     </CartProvider>
   );
